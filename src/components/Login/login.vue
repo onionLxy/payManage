@@ -3,7 +3,7 @@
     :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px"
   >
     <div class="panel-heading">
-      <img  class='union_logo' src="../../assets/union.png" alt="" />
+      <img  class='union_logo' src="../../assets/union.png" />
       <h1 class="panel-title">物联网支付标记管理平台</h1>
     </div>
     <div class="panel-body">
@@ -72,15 +72,24 @@ html {
   height: 100%;
 }
 body {
+    height: 100%;
     background: url(../../assets/timg.jpg);
     background-size: cover;
+    position: relative;
+}
+* {
+  margin: 0;
+  padding: 0;
 }
 </style>
 <style lang='less' scoped >
 .el-form {
-    width:680px;
-    height: 450px;
-    margin:400px auto;
+    width:25%;
+    height: 20%;
+    position: absolute;
+    left: 50%;
+    top:25%;
+    transform: translate(-50%,0);
   .panel-heading {
       height: 100px;
       position: relative;

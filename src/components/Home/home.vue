@@ -49,6 +49,7 @@
 </template>
 
 <script>
+/*eslint-disable */
 export default {
   methods: {
     // 退出登陆
@@ -64,14 +65,14 @@ export default {
           this.$message({
             type: "success",
             message: "删除成功!"
-          });
+          })
         })
         .catch(() => {
           this.$message({
             type: "info",
             message: "已取消删除"
-          });
-        });
+          })
+        })
     },
     // 侧边栏菜单打开与关闭的检测
     handleOpen(key, keyPath) {
@@ -81,7 +82,7 @@ export default {
       console.log(key, keyPath);
     }
   }
-};
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
