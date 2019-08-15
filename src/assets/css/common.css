@@ -1,0 +1,15 @@
+html{
+  width: 100%;
+  background-color: skyblue;
+  background-size:cover
+}
+html,
+body,
+#app {
+  height: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}

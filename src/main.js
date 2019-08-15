@@ -5,6 +5,9 @@ import App from './App.vue'
 import router from './router'
 import ElementUI from 'element-ui'
 import '../node_modules/element-ui/lib/theme-chalk/index.css'
+// 引入全局的css
+import './assets/css/common.css'
+
 // 安装elementUI
 Vue.use(ElementUI)
 Vue.config.productionTip = false
