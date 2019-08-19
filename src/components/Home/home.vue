@@ -2,13 +2,24 @@
   <el-container>
     <el-header>
       <el-row>
-        <el-col :span="3" class="logo"
-          ><img src="../../assets/union.png" alt=""
-        /></el-col>
-        <el-col :span="15"
-          ><div class="grid-content bg-purple-light">222</div></el-col
+        <el-col :span="3" class="logo">
+          <img src="../../assets/union.png" alt="" />
+          <span class="font">中国银联</span>
+        </el-col>
+        <el-col :span="18" class="title"
+          ><div class="grid-content bg-purple-light">
+            <h1>物联网后台管理系统</h1>
+          </div></el-col
         >
-        <el-col :span="6"><div class="grid-content bg-purple">333</div></el-col>
+        <el-col :span="3" class="right"
+          ><div class="grid-content bg-purple">
+            <span class="user">
+              <i class="el-icon-s-custom"></i>
+              admin</span
+            >
+            <span class="layOut">退出</span>
+          </div></el-col
+        >
       </el-row>
     </el-header>
     <el-container>
@@ -32,7 +43,6 @@
                 </template>
 
                 <el-menu-item index="1-1">菜单列表</el-menu-item>
-                <el-menu-item index="1-2">菜单明细</el-menu-item>
               </el-submenu>
               <el-menu-item index="2">
                 <i class="el-icon-menu"></i>
@@ -42,7 +52,9 @@
           </el-col>
         </el-row>
       </el-aside>
-      <el-main>Main</el-main>
+      <el-main>
+        <router-view></router-view>
+      </el-main>
     </el-container>
   </el-container>
 </template>
@@ -67,34 +79,54 @@ export default {
 }
 
 .el-header {
-  color: #333;
+  background-color: rgb(84, 92, 100);
   text-align: center;
   line-height: 60px;
   margin: 0;
   padding: 0;
   .logo {
     width: 200px;
+    height: 60px;
     position: relative;
+    img {
+      width: 68px;
+      height: 40px;
+      position: absolute;
+      left: 6%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .font {
+      font-size: 20px;
+      color: #fff;
+      padding-left: 28%;
+    }
   }
-  img {
-    width: 68px;
-    height: 40px;
-    position: absolute;
-    left:0;
-    top:50%;
-    transform: translate(0%,-50%)
+  .title {
+    h1 {
+      font-size: 30px;
+      color: #fff;
+    }
   }
-  .bg-purple-light {
-    background-color: skyblue;
+  .right {
+    padding: 0 20px;
+    .user {
+      float: left;
+      font-size: 20px;
+    }
+    .layOut {
+      float: right;
+      font-size: 20px;
+    }
   }
 }
 
 .el-aside {
   width: 200px;
-  color: #333;
   text-align: center;
   line-height: 200px;
-  .el-menu-vertical-demo.el-menu {
+  background-color: rgb(84, 92, 100);
+  .el-menu-vertical-demo {
     width: 200px;
   }
 }
