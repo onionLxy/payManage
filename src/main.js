@@ -2,16 +2,19 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App.vue'
-import router from './router'
+// 引入路由
+import router from './router/index.js'
+// 引入elementUI
 import ElementUI from 'element-ui'
 import '../node_modules/element-ui/lib/theme-chalk/index.css'
-// 引入全局的css
-import './assets/css/common.css'
-
 // 安装elementUI
 Vue.use(ElementUI)
-Vue.config.productionTip = false
 
+// 引入全局的css
+/* eslint-disable*/
+import './assets/css/common.css'
+
+Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
