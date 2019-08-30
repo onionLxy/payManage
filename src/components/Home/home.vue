@@ -44,7 +44,7 @@
                   <i class="el-icon-location"></i>
                   <span>菜单管理</span>
                 </template>
-                <el-menu-item index="Users">用户列表</el-menu-item>
+                <el-menu-item index="users">用户列表</el-menu-item>
               </el-submenu>
               <!-- 第二个 -->
                <el-submenu index="2">
@@ -143,7 +143,6 @@ export default {
 .el-main {
   background-color: #e9eef3;
   color: #333;
-  text-align: center;
-  line-height: 160px;
+
 }
 </style>

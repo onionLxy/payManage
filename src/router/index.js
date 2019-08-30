@@ -6,8 +6,8 @@ import VueRouter from "vue-router";
 import Login from "../components/login/Login.vue";
 import Home from "../components/home/Home.vue";
 import Users from "../components/users/Users.vue";
-import Roles from '../components/roles/Roles.vue'
-import Rights from '../components/rights/Rights.vue'
+import Roles from "../components/roles/Roles.vue";
+import Rights from "../components/rights/Rights.vue";
 
 Vue.use(VueRouter);
 /* eslint-disable */
