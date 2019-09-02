@@ -8,11 +8,11 @@
     <!-- 搜索 -->
     <div style="margin-top: 15px;">
       <el-input
-        placeholder="请输入内容"
+        placeholder="请通过用户名搜索"
         v-model="searchText"
         class="input-with-select"
       >
-        <el-button slot="append" icon="el-icon-search"></el-button>
+        <el-button slot="append" icon="el-icon-search" @click="startQuery"></el-button>
       </el-input>
       <el-button>添加用户</el-button>
     </div>
@@ -40,12 +40,14 @@
     </el-table>
     <!-- 分页 -->
     <el-pagination
-      :page-sizes="[2, 4, 6]"
-      :page-size="100"
-      layout="sizes, prev, pager, next"
+      background
+      layout="prev, pager, next"
       :total="total"
-    >
-    </el-pagination>
+      :page-size="2"
+      :current-page="pagenum"
+      @current-change="changePage"
+      class="size"
+    ></el-pagination>
   </div>
 </template>
 <script>
@@ -78,7 +80,7 @@ export default {
           params: {
             query,
             pagenum,
-            pagesize: 2!
+            pagesize:2
           },
           headers: {
             Authorization: localStorage.getItem("token")
@@ -101,6 +103,17 @@ export default {
         "http://localhost:8888/api/private/v1/`users/${id}/state/${mgState}`"
       );
       console.log(id);
+    },
+    // 点击跳转点击的页码数据
+    changePage(curPage) {
+      console.log('页面改变了',curPage);
+      // 把取到的curPage赋值给pagenum,重新渲染页面;
+      this.loadUsersList(curPage, this.searchText);
+    },
+    // 查找
+    startQuery() {
+      console.log(this.searchText);
+
     }
   }
 };
